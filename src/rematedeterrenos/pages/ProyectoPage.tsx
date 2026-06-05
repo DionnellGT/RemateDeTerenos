@@ -1,7 +1,6 @@
 import { MapPin, Globe2 } from "lucide-react";
 import { useParams } from "react-router";
 import { Contactenos } from "../components/Contactenos";
-import { NuestrasCaracteristicas } from "../components/NuestrasCaracteristicas";
 import { useProyectoPorSlug } from "../hooks/useProyectos";
 import { Conectividad } from "../components/Conectividad";
 import { GaleriaDeTerrenos } from "../components/GaleriaDeTerrenos";
@@ -50,9 +49,6 @@ export const ProyectoPage = () => {
             />
         </div>
       </section>
-
-      {/* Características */}
-      <NuestrasCaracteristicas images={proyecto.imagenesDeCaracteristicas} />
 
       {/* Cards de características */}
       <CardsCaracteristicas />

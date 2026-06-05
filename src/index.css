@@ -199,6 +199,9 @@
 .animate-flip {
   animation: flipIn 0.3s ease-out;
 }
+.font{
+  font-Family: "'Great Vibes', cursive"
+}
 
 html {
   scroll-behavior: smooth;

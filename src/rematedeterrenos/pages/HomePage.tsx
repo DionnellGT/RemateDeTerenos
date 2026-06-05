@@ -3,6 +3,7 @@ import { Contactenos } from "../components/Contactenos";
 import TuParcela from "../components/home/TuParcela";
 import { Proyectos } from "../components/home/Proyectos";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { GranRentabilidad } from "../components/home/GranRentabilidad";
 
 export const HomePage = () => {
   const isMobile = useIsMobile();
@@ -30,6 +31,7 @@ export const HomePage = () => {
       </section>
 
       <TuParcela/>
+      <GranRentabilidad/>
       <Proyectos/>
       <ChatBotWsp/>
       <Contactenos/>
