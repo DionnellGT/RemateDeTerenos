@@ -166,7 +166,7 @@
 
    /* Custom scrollbar */
   .custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
@@ -175,12 +175,12 @@
   }
  
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #a07030;
+    background: #aedb4c;
     border-radius: 5px;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #c2893f;
+    background: #C0F059;
   }
 }
 

@@ -4,13 +4,11 @@ import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLocation, useNavigate } from "react-router";
 
-const LOGO_WHITE = "/logo.svg";
-const LOGO_STICKY = "/logo_sticky.svg";
+const LOGO_STICKY = "/logo.svg";
 
 const NAV_LINKS = [
-  { label: "Somos", href: "#somos" },
   { label: "Proyectos", href: "#proyectos" },
-  { label: "Testimonios", href: "#testimonios" },
+  { label: "Contactanos", href: "#contactanos" },
 ];
 
 export const NavbarRemate = () => {
@@ -64,8 +62,8 @@ export const NavbarRemate = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ",
-        isScrolled || isProyectoPage ? "bg-white shadow-md" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-md",
+        isScrolled ? "py-1" : "py-0"
       )}
     >
       <div className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
@@ -73,7 +71,7 @@ export const NavbarRemate = () => {
         {/* Logo */}
         <a href="/" className="flex items-center">
           <img
-            src={isScrolled || isProyectoPage ? LOGO_STICKY : LOGO_WHITE}
+            src={LOGO_STICKY}
             alt="El Avellano"
             className="h-12 w-auto transition-all duration-500"
           />
@@ -89,9 +87,7 @@ export const NavbarRemate = () => {
               className={cn(
                 "relative text-[13px] tracking-[0.06em] uppercase font-medium transition-colors duration-300 hover:font-semibold",
                 "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:transition-all after:duration-300 after:ease-out hover:after:w-full",
-                isScrolled || isProyectoPage
-                  ? "text-stone-700 hover:text-stone-900 after:bg-stone-900"
-                  : "text-white/90 hover:text-white after:bg-white"
+                "text-stone-700 hover:text-stone-900 after:bg-stone-900"
               )}
             >
               {link.label}
@@ -99,14 +95,15 @@ export const NavbarRemate = () => {
           ))}
 
           <a
-            href="#contactanos"
-            onClick={(e) => handleAnchorClick(e, "#contactanos")}
+            href="https://api.whatsapp.com/send/?phone=56949437974&text=Para+saber+sobre+tu+parcela+ind%C3%ADcanos%3A++Nombre+y+Apellido%2C+Nombre+del+Proyecto%2C+Lote+y+Caso&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"      
             className={cn(
               "px-5 py-2 rounded-full text-[13px] font-semibold tracking-[0.06em] uppercase transition-all duration-300",
-              "bg-[#a07030] text-white hover:bg-[#8a5f28]"
+              "bg-[#aedb4c] text-white hover:bg-[#C0F059] hover:text-white/90"
             )}
           >
-            Contáctanos
+            Servicio al Cliente
           </a>
         </nav>
 
@@ -126,7 +123,7 @@ export const NavbarRemate = () => {
             </SheetTrigger>
             <SheetContent side="right" className="bg-stone-900 border-none w-72 [&>button]:text-white [&>button]:hover:text-white/70">
               <div className="px-2 mt-6 mb-10">
-                <img src={LOGO_WHITE} alt="El Avellano" className="h-10 w-auto" />
+                <img src={LOGO_STICKY} alt="El Avellano" className="h-10 w-auto" />
               </div>
               <nav className="flex flex-col gap-6 px-2" aria-label="Menú móvil">
                 {NAV_LINKS.map((link) => (
@@ -143,14 +140,12 @@ export const NavbarRemate = () => {
                   </a>
                 ))}
                 <a
-                  href="#contactanos"
-                  onClick={(e) => {
-                    setMobileOpen(false);
-                    handleAnchorClick(e, "#contactanos");
-                  }}
-                  className="mt-2 inline-block px-5 py-2 rounded-full bg-[#a07030] text-white text-[13px] font-semibold tracking-[0.06em] uppercase text-center"
+                  href="https://api.whatsapp.com/send/?phone=56949437974&text=Para+saber+sobre+tu+parcela+ind%C3%ADcanos%3A++Nombre+y+Apellido%2C+Nombre+del+Proyecto%2C+Lote+y+Caso&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-block px-5 py-2 rounded-full bg-[#aedb4c] text-white text-[13px] font-semibold tracking-[0.06em] uppercase text-center"
                 >
-                  Contáctanos
+                  Servicio al Cliente
                 </a>
               </nav>
             </SheetContent>
