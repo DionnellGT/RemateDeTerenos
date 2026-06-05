@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useProyectos } from "../hooks/useProyectos";
+import { useProyectos } from "../../hooks/useProyectos";
 import { Link } from "react-router";
 
 export const Proyectos = () => {
