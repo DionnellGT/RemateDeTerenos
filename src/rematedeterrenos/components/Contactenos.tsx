@@ -18,7 +18,7 @@ export const Contactenos = () => {
 
   const inputClass = (hasError: boolean) =>
     `border rounded-lg px-4 py-2.5 text-[14px] text-stone-700 placeholder:text-stone-400 focus:outline-none transition-colors ${
-      hasError ? "border-red-400 focus:border-red-500" : "border-stone-200 focus:border-[#a07030]"
+      hasError ? "border-red-400 focus:border-red-500" : "border-stone-200 focus:border-[#aedb4c]"
     }`;
 
   return (
@@ -33,8 +33,13 @@ export const Contactenos = () => {
 
           {/* Columna izquierda — texto */}
           <div>
-            <h2 className="font-bold text-[#a07030] max-sm:text-2xl max-sm:px-3 max-sm:py-1 max-sm:text-center text-4xl md:text-5xl leading-tight mb-6">
-              Estamos<br />aquí para ti
+            <h2 className="max-sm:text-2xl max-sm:px-3 max-sm:py-1 max-sm:text-center text-4xl md:text-5xl leading-tight mb-6">
+              <span className="block font-black text-[#1a3a3a]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                ¿Quieres Saber más?
+              </span>
+              <span className="block text-[#aedb4c]" style={{ fontFamily: "'Great Vibes', cursive", fontSize: "3rem" }}>
+                Contáctanos
+              </span>
             </h2>
             <p className="text-stone-600 max-sm:text-[13px] max-sm:px-3 text-[15px] leading-relaxed max-w-sm">
               Queremos ayudarte a hacer realidad tu proyecto.{" "}
@@ -46,10 +51,10 @@ export const Contactenos = () => {
           </div>
 
           {/* Columna derecha — formulario */}
-          <div className="bg-white rounded-2xl p-5 md:p-8 shadow-md">
-            <h3 className="font-bold text-stone-900 text-xl mb-6">
-              Escríbenos{" "}
-              <span className="text-[#a07030]">tu mensaje</span>
+<div className="bg-white/95 rounded-2xl p-5 md:p-8 shadow-[0_25px_75px_rgba(0,0,0,0.14)] border border-[#aedb4c]/40">
+              <h3 className="font-bold text-stone-900 text-xl mb-6">
+                Escríbenos{" "}
+                <span className="text-[#aedb4c]">tu mensaje</span>
             </h3>
 
             <div className="grid md:grid-cols-2 gap-4 mb-4">
@@ -112,7 +117,7 @@ export const Contactenos = () => {
             <div className="flex justify-end">
               <button
                 onClick={handleSubmit(onSubmit)}
-                className="text-[#a07030] font-bold text-[18px] py-2 px-6 rounded-full hover:bg-[#8a5f28] hover:text-white transition-colors duration-200"
+                className="rounded-full border border-[#aedb4c] bg-[#aedb4c] px-6 py-2 text-[18px] font-bold text-stone-900 transition-colors duration-200 hover:bg-[#c7f56b] hover:text-stone-900"
               >
                 Enviar
               </button>
