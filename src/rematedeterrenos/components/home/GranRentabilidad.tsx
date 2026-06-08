@@ -56,7 +56,6 @@ export const GranRentabilidad = () => {
         {/* Right side - Image */}
         <div className="relative flex justify-center order-2">
           <div className="relative w-full max-w-md">
-            
             <img 
               src={isMobile ? "/fotogentemob.jpg" : "/fotogente.jpg"}
               alt="Pareja joven" 
