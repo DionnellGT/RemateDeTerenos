@@ -87,7 +87,7 @@ export const NavbarRemate = () => {
               className={cn(
                 "relative text-[13px] tracking-[0.06em] uppercase font-medium transition-colors duration-300 hover:font-semibold",
                 "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:transition-all after:duration-300 after:ease-out hover:after:w-full",
-                "text-stone-700 hover:text-stone-900 after:bg-stone-900"
+                "text-stone-700 hover:text-stone-900 after:bg-[#aedb4c]"
               )}
             >
               {link.label}
