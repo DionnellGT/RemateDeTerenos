@@ -2,8 +2,8 @@ import { useRef } from 'react';
 import ChatBot from 'react-chatbotify';
 
 
-export const ChatBotWsp = () => {
-  const formRef = useRef({ name: '', email: '', message: '' });
+export const ChatBotProjectWsp = (nombre: any) => {
+  const formRef = useRef({ name: '', email: '' });
   
   const setting: any = {
     general: { 
@@ -159,33 +159,37 @@ export const ChatBotWsp = () => {
     },
     askTopic: {
       message: () =>
-        `Perfecto, ${formRef.current.name}. ¿Sobre qué terreno te gustaría recibir información?`,
-      options: ['El Avellano - Los Muermos', 'El Avellano - Pasajes del Rio'],
+        `Perfecto, ${formRef.current.name}. ¿Le gustaría recibir mas información sobre ${nombre}?`,
+      options: ['Si, de acuerdo', 'No, gracias'],
       chatDisabled: true,
-      function: (params: { userInput: string }) => {
-        formRef.current.message = params.userInput;
+      function: async (params: { userInput: string }) => {
+        if (params.userInput === 'Si, de acuerdo') {
+          return 'checkInfo';
+        } else {
+          return 'end';
+        }
       },
-      path: 'checkInfo',
     },
     checkInfo: {
       message: () =>
         `¡Gracias ${formRef.current.name}! Su información es la siguiente:\n\n` +
         `Nombre: ${formRef.current.name}\n` +
         `Email: ${formRef.current.email}\n` +
-        `Interés en: ${formRef.current.message}`,
+        `Interés en: ${nombre}\n\n` +
+        `¿Es correcta esta información?`,
       chatDisabled: true,
       options: ['Sí, es correcta', 'No, quiero corregirla'],
       path: async (params: { userInput: string }) => {
         if (params.userInput === 'Sí, es correcta') {
-          const { name, email, message } = formRef.current;
-          const wspMessage = `Hola, me gustaría recibir información sobre ${message}. \n` + 
+          const { name, email } = formRef.current;
+          const wspMessage = `Hola, me gustaría recibir información sobre ${nombre}. \n` + 
                               `Mi nombre es ${name} y mi correo es ${email}.`;
           const encodedMessage = encodeURIComponent(wspMessage);
           window.open(`https://wa.me/56912345678?text=${encodedMessage}`, '_blank');
-          formRef.current = { name: '', email: '', message: '' };
+          formRef.current = { name: '', email: '' };
           return 'end';
         } else {
-          formRef.current = { name: '', email: '', message: '' };
+          formRef.current = { name: '', email: '' };
           return 'askName';
         }
       },
@@ -195,7 +199,7 @@ export const ChatBotWsp = () => {
         '¡Gracias por usar nuestro chatbot! Si tienes más preguntas, no dudes en contactarnos.',
       chatDisabled: true,
       path: () => {
-        formRef.current = { name: '', email: '', message: '' };
+        formRef.current = { name: '', email: '' };
         return 'start';
       },
     },
