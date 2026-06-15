@@ -7,7 +7,7 @@ import { GaleriaDeTerrenos } from "../components/GaleriaDeTerrenos";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { useEffect } from "react";
 import { CardsCaracteristicas } from "../components/CardsCaracteristicas";
-import { ChatBotWsp } from "../components/ChatBot";
+import { ChatBotProjectWsp } from "../components/ChatBotProject";
 
 
 export const ProyectoPage = () => {
@@ -134,7 +134,7 @@ export const ProyectoPage = () => {
       />
 
       {/* Chatbot */}
-      <ChatBotWsp />
+      <ChatBotProjectWsp nombre={proyecto.name} />
 
       <Contactenos />
     </div>
