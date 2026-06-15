@@ -163,7 +163,7 @@ export const ChatBotProjectWsp = ({ nombre }: { nombre: string }) => {
       options: ['Si, de acuerdo', 'No, gracias'],
       chatDisabled: true,
       path: (params: { userInput: string }) => {
-        if (params.userInput === 'Sí, de acuerdo') {
+        if (params.userInput === 'Si, de acuerdo') {
           return 'checkInfo';
         }
         return 'end';
@@ -184,7 +184,7 @@ export const ChatBotProjectWsp = ({ nombre }: { nombre: string }) => {
           const wspMessage = `Hola, me gustaría recibir información sobre ${nombre}. \n` + 
                               `Mi nombre es ${name} y mi correo es ${email}.`;
           const encodedMessage = encodeURIComponent(wspMessage);
-          window.open(`https://wa.me/56912345678?text=${encodedMessage}`, '_blank');
+          window.open(`https://wa.me/56949437974?text=${encodedMessage}`, '_blank');
           formRef.current = { name: '', email: '' };
           return 'end';
         } else {
