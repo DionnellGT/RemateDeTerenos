@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import ChatBot from 'react-chatbotify';
 
 
-export const ChatBotProjectWsp = (nombre: any) => {
+export const ChatBotProjectWsp = ({ nombre }: { nombre: string }) => {
   const formRef = useRef({ name: '', email: '' });
   
   const setting: any = {
@@ -162,12 +162,11 @@ export const ChatBotProjectWsp = (nombre: any) => {
         `Perfecto, ${formRef.current.name}. ¿Le gustaría recibir mas información sobre ${nombre}?`,
       options: ['Si, de acuerdo', 'No, gracias'],
       chatDisabled: true,
-      function: async (params: { userInput: string }) => {
-        if (params.userInput === 'Si, de acuerdo') {
+      path: (params: { userInput: string }) => {
+        if (params.userInput === 'Sí, de acuerdo') {
           return 'checkInfo';
-        } else {
-          return 'end';
         }
+        return 'end';
       },
     },
     checkInfo: {
