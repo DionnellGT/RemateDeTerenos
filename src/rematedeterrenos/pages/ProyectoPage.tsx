@@ -1,7 +1,7 @@
 import { MapPin, Globe2 } from "lucide-react";
 import { useParams } from "react-router";
 import { Contactenos } from "../components/Contactenos";
-import { useProyectoPorSlug } from "../hooks/useProyectos";
+import { useProject } from "../hooks/useProject";
 import { Conectividad } from "../components/Conectividad";
 import { GaleriaDeTerrenos } from "../components/GaleriaDeTerrenos";
 import { useIsMobile } from "../hooks/useIsMobile";
@@ -12,22 +12,30 @@ import { ChatBotWsp } from "../components/ChatBot";
 
 export const ProyectoPage = () => {
   const { idSlug } = useParams();
-  const proyecto = useProyectoPorSlug(idSlug);
+  const { proyecto, loading, error } = useProject(idSlug);
   const isMobile = useIsMobile();
 
   useEffect(() => {
     if (proyecto) {
-      document.title = `${proyecto.name} | El Avellano`;
+      document.title = `${proyecto.name} | Remate de Terrenos`;
     } else {
-      document.title = "Proyecto no encontrado | El Avellano";
+      document.title = "Proyecto no encontrado | Remate de Terrenos";
     }
 
     return () => {
-      document.title = "El Avellano"; // restaura al salir de la página
+      document.title = "Remate de Terrenos"; // restaura al salir de la página
     };
   }, [proyecto]);
 
-  if (!proyecto) {
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-stone-100 px-6">
+        <p className="text-2xl font-semibold text-stone-700">Cargando proyecto...</p>
+      </div>
+    );
+  }
+
+  if (error || !proyecto) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-stone-100 px-6">
         <h1 className="text-3xl font-bold text-stone-800">Proyecto no encontrado</h1>
@@ -39,7 +47,6 @@ export const ProyectoPage = () => {
     <div className="bg-white ">
       <section
         className="relative overflow-hidden bg-cover bg-center py-18 vanishing-gradient"
-        //style={{ backgroundImage: isMobile ? `url(${proyecto.imagenBannerPrincipalMobile})` : `url(${proyecto.imagenBannerPrincipal})` }}
       >
         <div className="relative z-10 mx-auto text-white overflow-hidden max-w-full shadow-2xl">
           <img
@@ -62,10 +69,10 @@ export const ProyectoPage = () => {
         <div className="relative max-w-6xl mx-auto px-6">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
             <div>
-              <p className="text-[#e5c07b] text-[12px] font-semibold tracking-[0.2em] uppercase mb-2">
+              <p className="text-[#1fcd26] text-[12px] font-semibold tracking-[0.2em] uppercase mb-2">
                 Ubicación
               </p>
-              <h2 className="font-bold text-4xl md:text-5xl text-white mb-4">
+              <h2 className="font-bold font-courgette text-4xl md:text-5xl text-white mb-4">
                 Mapa y acceso directo
               </h2>
               <p className="text-stone-300 text-base leading-relaxed mb-8">
@@ -76,7 +83,7 @@ export const ProyectoPage = () => {
                   href={proyecto.linkMapa}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-[#a07030] px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white shadow-lg shadow-black/20 hover:bg-[#8a5f28] transition-colors duration-200"
+                  className="inline-flex items-center justify-center rounded-full bg-[#1fcd26] px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white shadow-lg shadow-black/20 hover:bg-[#1a9c1f] transition-colors duration-200"
                 >
                   Ver en Google Maps <MapPin className="ml-2" />
                 </a>

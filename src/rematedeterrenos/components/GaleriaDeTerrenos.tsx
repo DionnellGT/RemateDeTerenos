@@ -43,10 +43,10 @@ export const GaleriaDeTerrenos = ({ imagenesVistasProyecto }: { imagenesVistasPr
     <section className="py-16 bg-[#f5f0eb] overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
-          <p className="text-[#a07030] text-[12px] font-semibold tracking-[0.2em] uppercase mb-2">
+          <p className="text-[#1fcd26] text-[12px] font-semibold tracking-[0.2em] uppercase mb-2">
             Encuentra tu Destino
           </p>
-          <h2 className="font-bold text-stone-900 text-3xl md:text-5xl mb-4">
+          <h2 className="font-bold font-courgette text-stone-900 text-3xl md:text-5xl mb-4">
             Vistas del Proyecto
           </h2>
           <p className="text-stone-600 text-base leading-relaxed max-w-xl mx-auto">
@@ -56,11 +56,11 @@ export const GaleriaDeTerrenos = ({ imagenesVistasProyecto }: { imagenesVistasPr
         </div>
 
         {/* Carrusel */}
-        <div className="relative flex items-center justify-center gap-4 h-[250px] md:h-[420px]">
+        <div className="relative flex items-center justify-center gap-4 h-[250px] md:h-[320px]">
 
           {/* Card IZQUIERDA */}
           <div
-            className={`relative w-[220px] md:w-[260px] h-[180px] md:h-[320px] rounded-2xl overflow-hidden flex-shrink-0 cursor-pointer opacity-80 hover:opacity-90 transition-all duration-350 ${
+            className={`relative w-[220px] md:w-[260px] h-[180px] md:h-[200px] rounded-2xl overflow-hidden flex-shrink-0 cursor-pointer opacity-80 hover:opacity-90 transition-all duration-350 ${
               animating && direction === "left" ? "translate-x-[120%] opacity-100 scale-105" : ""
             }`}
             onClick={prev}
@@ -80,7 +80,7 @@ export const GaleriaDeTerrenos = ({ imagenesVistasProyecto }: { imagenesVistasPr
           </div>
 
           {/* Card CENTRAL */}
-          <div className="relative w-[250px] md:w-[620px] h-[210px] md:h-[420px] rounded-2xl overflow-hidden flex-shrink-0 shadow-2xl z-10 group">
+          <div className="relative w-[250px] md:w-[420px] h-[210px] md:h-[250px] rounded-2xl overflow-hidden flex-shrink-0 shadow-2xl z-10 group">
             <img
               key={current}
               src={imagenesVistasProyecto[current]}
@@ -109,7 +109,7 @@ export const GaleriaDeTerrenos = ({ imagenesVistasProyecto }: { imagenesVistasPr
 
           {/* Card DERECHA */}
           <div
-            className={`relative w-[220px] md:w-[260px] h-[180px] md:h-[320px] rounded-2xl overflow-hidden flex-shrink-0 cursor-pointer opacity-80 hover:opacity-90 transition-all duration-350 ${
+            className={`relative w-[220px] md:w-[260px] h-[180px] md:h-[200px] rounded-2xl overflow-hidden flex-shrink-0 cursor-pointer opacity-80 hover:opacity-90 transition-all duration-350 ${
               animating && direction === "right" ? "-translate-x-[120%] opacity-100 scale-105" : ""
             }`}
             onClick={next}
@@ -137,7 +137,7 @@ export const GaleriaDeTerrenos = ({ imagenesVistasProyecto }: { imagenesVistasPr
               key={i}
               onClick={() => setCurrent(i)}
               className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                i === current ? "bg-[#a07030] w-6" : "bg-stone-300"
+                i === current ? "bg-[#1fcd26] w-6" : "bg-stone-300"
               }`}
             />
           ))}

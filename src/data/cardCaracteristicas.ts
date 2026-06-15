@@ -2,31 +2,32 @@
 export interface Caracteristica {
   icono: string;
   titulo: string;
+  bgColor?: string;
 }
 
 export const cardCaracteristicas: Caracteristica[] = [
   {
-    icono: "/choose1-icon1.webp",
-    titulo: "Terrenos desde los 5.000 m2",
+    icono: "/caracteristicas/Terrenos.png",
+    titulo: "Terrenos desde los 5.000 mts2",
   },
   {
-    icono: "/choose1-icon4.webp",
-    titulo: "Factibilidad de luz",
+    icono: "/caracteristicas/EnergiaRenovables.png",
+    titulo: "Apto para energías renovables",
   },
   {
-    icono: "/choose1-icon3.webp",
-    titulo: "Aprovechando los caminos existentes",
+    icono: "/caracteristicas/Lluvias.png",
+    titulo: "Cosecha de aguas lluvias",
   },
   {
-    icono: "/choose1-icon2.webp",
-    titulo: "Apto para Energías Renovables. Cosecha de aguas lluvias",
+    icono: "/caracteristicas/caminos.png",
+    titulo: "Aprovechamiento de caminos existentes",
   },
   {
-    icono: "/choose1-icon5.webp",
-    titulo: "Topografía Plana y Semi Plana. Hermosas praderas",
+    icono: "/caracteristicas/Cultivos.png",
+    titulo: "Ideal para el Auto cultivo",
   },
   {
-    icono: "/choose1-icon6.webp",
-    titulo: "Terreno con compromiso de sustentabilidad",
+    icono: "/caracteristicas/autosostentabilidad.png",
+    titulo: "Proyecto comprometido con la autosostentabilidad",
   },
 ];

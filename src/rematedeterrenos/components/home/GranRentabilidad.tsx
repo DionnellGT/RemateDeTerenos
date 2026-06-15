@@ -33,7 +33,7 @@ export const GranRentabilidad = () => {
           <h2 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
             Gran<br />
             rentabilidad a<br />
-            <span className="text-yellow-400 italic font-script font">bajo costo</span>
+            <span className="text-yellow-400  font-script">bajo costo</span>
           </h2>
 
           <div className="space-y-3 max-w-[395px] my-6">
