@@ -3,37 +3,54 @@ import { useParams } from "react-router";
 
 const Card = ({ item }: { item: { icono: string; titulo: string } }) => (
   <div
-    className="flex flex-col items-center text-center gap-4 rounded-2xl px-5 py-8 group transition-all duration-300 w-full h-full"
+    className="flex flex-col items-center text-center gap-4 rounded-2xl px-5 py-8 group transition-all duration-300 w-full h-full cursor-default"
     style={{
-      background: "linear-gradient(145deg, #1c1c1c, #0a0a0a)",
-      boxShadow:
-        "6px 6px 14px rgba(0,0,0,0.6), -3px -3px 8px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.06)",
+      background: "linear-gradient(160deg, #faf8f4 0%, #ede9e0 100%)",
+      boxShadow: `
+        0 1px 0 rgba(255,255,255,0.9) inset,
+        0 -1px 0 rgba(0,0,0,0.08) inset,
+        4px 6px 16px rgba(0,0,0,0.18),
+        -2px -2px 6px rgba(255,255,255,0.7),
+        0 8px 24px rgba(0,0,0,0.12)
+      `,
     }}
     onMouseEnter={(e) => {
       const el = e.currentTarget as HTMLDivElement;
-      el.style.boxShadow =
-        "8px 8px 20px rgba(0,0,0,0.7), -4px -4px 10px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.08), 0 0 0 1px rgba(160,112,48,0.3)";
-      el.style.background = "linear-gradient(145deg, #222, #111)";
+      el.style.boxShadow = `
+        0 1px 0 rgba(255,255,255,0.95) inset,
+        0 -1px 0 rgba(0,0,0,0.1) inset,
+        6px 10px 28px rgba(0,0,0,0.22),
+        -3px -3px 10px rgba(255,255,255,0.8),
+        0 12px 36px rgba(0,0,0,0.16),
+        0 0 0 1px rgba(74,122,74,0.25)
+      `;
+      el.style.background = "linear-gradient(160deg, #ffffff 0%, #eae6dc 100%)";
+      el.style.transform = "translateY(-2px)";
     }}
     onMouseLeave={(e) => {
       const el = e.currentTarget as HTMLDivElement;
-      el.style.boxShadow =
-        "6px 6px 14px rgba(0,0,0,0.6), -3px -3px 8px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.06)";
-      el.style.background = "linear-gradient(145deg, #1c1c1c, #0a0a0a)";
+      el.style.boxShadow = `
+        0 1px 0 rgba(255,255,255,0.9) inset,
+        0 -1px 0 rgba(0,0,0,0.08) inset,
+        4px 6px 16px rgba(0,0,0,0.18),
+        -2px -2px 6px rgba(255,255,255,0.7),
+        0 8px 24px rgba(0,0,0,0.12)
+      `;
+      el.style.background = "linear-gradient(160deg, #faf8f4 0%, #ede9e0 100%)";
+      el.style.transform = "translateY(0)";
     }}
   >
-    <div className="w-14 h-14 flex items-center justify-center flex-shrink-0 [perspective:400px]">
+    {/* Ícono — escala + rotación en hover, sin filtro para conservar color original */}
+    <div className="w-20 h-20 flex items-center justify-center flex-shrink-0 transition-transform duration-500 ease-in-out group-hover:scale-115 group-hover:rotate-12">
       <img
         src={item.icono}
         alt={item.titulo}
-        className="w-full h-full object-contain transition-transform duration-700 ease-in-out group-hover:[transform:rotateY(360deg)] group-hover:scale-115"
-        style={{
-          filter:
-            "brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(0deg) brightness(0.65)",
-        }}
+        className="w-full h-full object-contain"
       />
     </div>
-    <p className="text-white text-sm md:text-md font-semibold leading-snug">
+
+    {/* Texto en verde, escala en hover */}
+    <p className="text-[#4a7a4a] text-sm md:text-md font-semibold leading-snug transition-all duration-300 group-hover:scale-110">
       {item.titulo}
     </p>
   </div>
@@ -41,22 +58,6 @@ const Card = ({ item }: { item: { icono: string; titulo: string } }) => (
 
 export const CardsCaracteristicas = () => {
   const { idSlug } = useParams();
-
-  /**
-   * Filtering logic:
-   *   "los-muermos"     → all 6 cards
-   *   "paisajes-del-rio" → 5 cards (excludes "Factibilidad de luz")
-   *
-   * Layout logic:
-   *
-   * DESKTOP (md+):  3 columns
-   *   6 items → Row 1: items 0-2, Row 2: items 3-5  (full 3+3 grid)
-   *   5 items → Row 1: items 0-2, Row 2: items 3-4 centered (each = 1/3 width)
-   *
-   * MOBILE:         2 columns
-   *   6 items → Row 1: items 0-1, Row 2: items 2-3, Row 3: items 4-5
-   *   5 items → Row 1: items 0-1, Row 2: items 2-3, Row 3: item 4 centered (= 1/2 width)
-   */
 
   const items =
     idSlug === "paisajes-del-rio"

@@ -146,7 +146,7 @@ const CarouselCentros = ({
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === current ? "bg-[#a07030] w-6" : "bg-stone-300"}`}
+            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === current ? "bg-[#1fcd26] w-6" : "bg-stone-300"}`}
           />
         ))}
       </div>
@@ -168,12 +168,12 @@ export const Conectividad = ({
 
         {/* Info */}
         <div>
-          <div className="flex items-center gap-2 text-[#a07030] uppercase tracking-[0.2em] text-[11px] font-semibold mb-3">
+          <div className="flex items-center gap-2 text-[#1fcd26] uppercase tracking-[0.2em] text-[11px] font-semibold mb-3">
             <Sparkles size={16} />
             Conectividad
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-stone-900 leading-tight mb-4">
-            Centros urbanos <span className="text-[#a07030]">cercanos</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-stone-900 leading-tight mb-4 font-courgette">
+            Centros urbanos <span className="text-[#1fcd26] ">cercanos</span>
           </h2>
           <p className="text-stone-500 text-base leading-relaxed mb-8">
             Accede fácilmente a los principales servicios y ciudades desde el proyecto.
@@ -192,7 +192,7 @@ export const Conectividad = ({
 
           {/* Badge de cantidad debajo del carrusel, alineada a la derecha */}
           <div className="flex justify-end mt-4 lg:mt-8">
-            <div className="bg-[#a07030] text-white rounded-[1.5rem] px-5 py-3 shadow-xl text-sm font-semibold tracking-wide">
+            <div className="bg-[#1fcd26] text-white rounded-[1.5rem] px-5 py-3 shadow-xl text-sm font-semibold tracking-wide">
               {centrosUrbanosCercanos.length} destinos cercanos
             </div>
           </div>
@@ -204,12 +204,12 @@ export const Conectividad = ({
 
         {/* Info */}
         <div>
-          <div className="flex items-center gap-2 text-[#a07030] uppercase tracking-[0.2em] text-[11px] font-semibold mb-3">
+          <div className="flex items-center gap-2 text-[#1fcd26] uppercase tracking-[0.2em] text-[11px] font-semibold mb-3">
             <MapPin size={16} />
             Turismo
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-stone-900 leading-tight mb-4">
-            Atracciones <span className="text-[#a07030]">turísticas</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-stone-900 leading-tight mb-4 font-courgette">
+            Atracciones <span className="text-[#1fcd26]">turísticas</span>
           </h2>
           <p className="text-stone-500 text-base mb-8 leading-relaxed">
             Vive experiencias únicas a pocos minutos del proyecto, rodeado de naturaleza y cultura local.
@@ -228,7 +228,7 @@ export const Conectividad = ({
 
           {/* Badge de cantidad ahora debajo del carrusel, alineada a la derecha */}
           <div className="flex justify-end mt-4 lg:mt-8">
-            <div className="bg-[#a07030] text-white rounded-[1.5rem] px-5 py-3 shadow-xl text-sm font-semibold tracking-wide">
+            <div className="bg-[#1fcd26] text-white rounded-[1.5rem] px-5 py-3 shadow-xl text-sm font-semibold tracking-wide">
               {atraccionesTuristicas.length} atracciones turísticas
             </div>
           </div>

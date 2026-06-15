@@ -1,7 +1,3 @@
-const fontStyle = `
-  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@900&display=swap');
-`;
-
 const ecoSustentableImg = "/ecoSustentable.png"
 const confianzaImg = "/confianza.png"
 const ubicacionImg = "/ubicacion.png"
@@ -26,7 +22,6 @@ const features = [
 export const TuParcela = () => {
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: fontStyle }} />
       <div className="min-h-screen bg-[#f0ede6] flex flex-col items-center justify-center px-5 py-12"
            style={{
              backgroundImage:
@@ -42,8 +37,7 @@ export const TuParcela = () => {
             Tu parcela en
           </h1>
           <p
-            className="text-5xl md:text-7xl text-[#1a4a3a] leading-tight mt-1"
-            style={{ fontFamily: "'Great Vibes', cursive" }}
+            className="font-script text-5xl md:text-7xl text-[#1fcd26] leading-tight mt-1"
           >
             Chiloé te espera
           </p>
