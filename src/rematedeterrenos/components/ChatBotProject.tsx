@@ -16,7 +16,7 @@ export const ChatBotProjectWsp = ({ nombre }: { nombre: string }) => {
     audio: { disabled: true },
     notification: { disabled: true },
     header: {
-      title: 'ChatBot El Avellano',
+      title: 'ChatBot Remate',
       avatar: '/favicon.ico',
       buttons: { close: true },
     },
@@ -58,7 +58,7 @@ export const ChatBotProjectWsp = ({ nombre }: { nombre: string }) => {
     },
     //  Botón de enviar con color y rounded
     sendButtonStyle: {
-      background: '#a07030',
+      background: '#4a7a4a',
       fill: '#ffffff',
       borderRadius: '50%',
       padding: '8px',
