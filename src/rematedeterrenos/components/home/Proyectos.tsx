@@ -11,7 +11,7 @@ export const Proyectos = () => {
           <p className="text-[#a07030] text-[11px] font-semibold tracking-[0.2em] uppercase mb-2">
             Encuentra tu parcela
           </p>
-          <h2 className="font-bold text-stone-900 text-3xl max-sm:text-2xl md:text-5xl font-serif">
+          <h2 className="font-bold font-courgette text-stone-900 text-3xl max-sm:text-2xl md:text-5xl">
             Nuestros Proyectos
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-stone-600 md:text-base">
@@ -30,7 +30,7 @@ export const Proyectos = () => {
             <p className="text-stone-700">No hay proyectos disponibles en este momento.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 px-5">
             {proyectos.map((proyecto) => (
               <article
                 key={proyecto.idSlug}
@@ -46,7 +46,7 @@ export const Proyectos = () => {
                     <p className="text-xs uppercase tracking-[0.2em] text-stone-400">
                       Region de los lagos
                     </p>
-                    <h3 className="mt-3 text-xl font-semibold text-stone-900">
+                    <h3 className="mt-3 text-xl font-semibold font-courgette text-stone-900">
                       {proyecto.name}
                     </h3>
                   </div>
