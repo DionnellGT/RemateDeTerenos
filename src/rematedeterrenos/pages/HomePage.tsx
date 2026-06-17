@@ -4,6 +4,7 @@ import TuParcela from "../components/home/TuParcela";
 import { Proyectos } from "../components/home/Proyectos";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { GranRentabilidad } from "../components/home/GranRentabilidad";
+import { UbicacionContacto } from "../components/Ubicacioncontacto";
 
 export const HomePage = () => {
   const isMobile = useIsMobile();
@@ -35,6 +36,7 @@ export const HomePage = () => {
       <Proyectos/>
       <ChatBotWsp/>
       <Contactenos/>
+      <UbicacionContacto/>
     </div>
   );
 };

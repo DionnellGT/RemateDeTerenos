@@ -8,6 +8,7 @@ import { useIsMobile } from "../hooks/useIsMobile";
 import { useEffect } from "react";
 import { CardsCaracteristicas } from "../components/CardsCaracteristicas";
 import { ChatBotProjectWsp } from "../components/ChatBotProject";
+import { UbicacionContacto } from "../components/Ubicacioncontacto";
 
 
 export const ProyectoPage = () => {
@@ -137,6 +138,7 @@ export const ProyectoPage = () => {
       <ChatBotProjectWsp nombre={proyecto.name} />
 
       <Contactenos />
+      <UbicacionContacto/>
     </div>
   );
 };
