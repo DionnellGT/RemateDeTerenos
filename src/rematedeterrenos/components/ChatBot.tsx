@@ -16,7 +16,7 @@ export const ChatBotWsp = () => {
     audio: { disabled: true },
     notification: { disabled: true },
     header: {
-      title: 'ChatBot El Avellano',
+      title: 'ChatBot Remate',
       avatar: '/favicon.ico',
       buttons: { close: true },
     },
@@ -58,7 +58,7 @@ export const ChatBotWsp = () => {
     },
     //  Botón de enviar con color y rounded
     sendButtonStyle: {
-      background: '#a07030',
+      background: '#4a7a4a',
       fill: '#ffffff',
       borderRadius: '50%',
       padding: '8px',
@@ -172,16 +172,17 @@ export const ChatBotWsp = () => {
         `¡Gracias ${formRef.current.name}! Su información es la siguiente:\n\n` +
         `Nombre: ${formRef.current.name}\n` +
         `Email: ${formRef.current.email}\n` +
-        `Interés en: ${formRef.current.message}`,
+        `Interés en: ${formRef.current.message}\n\n` +
+        `¿Es correcta esta información?`,
       chatDisabled: true,
       options: ['Sí, es correcta', 'No, quiero corregirla'],
       path: async (params: { userInput: string }) => {
         if (params.userInput === 'Sí, es correcta') {
-          const { name, email, message } = formRef.current;
-          const wspMessage = `Hola, me gustaría recibir información sobre ${message}. \n` + 
+          const { name, email } = formRef.current;
+          const wspMessage = `Hola, me gustaría recibir información sobre ${formRef.current.message}. \n` + 
                               `Mi nombre es ${name} y mi correo es ${email}.`;
           const encodedMessage = encodeURIComponent(wspMessage);
-          window.open(`https://wa.me/56912345678?text=${encodedMessage}`, '_blank');
+          window.open(`https://wa.me/56949437974?text=${encodedMessage}`, '_blank');
           formRef.current = { name: '', email: '', message: '' };
           return 'end';
         } else {
