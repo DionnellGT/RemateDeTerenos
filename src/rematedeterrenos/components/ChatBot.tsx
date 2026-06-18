@@ -1,8 +1,11 @@
 import { useRef } from 'react';
 import ChatBot from 'react-chatbotify';
 
+interface ChatBotWspProps {
+  proyectosActivos: string[];
+}
 
-export const ChatBotWsp = () => {
+export const ChatBotWsp = ({ proyectosActivos }: ChatBotWspProps) => {
   const formRef = useRef({ name: '', email: '', message: '' });
   
   const setting: any = {
@@ -19,6 +22,9 @@ export const ChatBotWsp = () => {
       title: 'ChatBot Remate',
       avatar: '/favicon.ico',
       buttons: { close: true },
+    },
+    chatWindow: {
+      showScrollbar: true
     },
     chatButton: {
       visible: true,
@@ -69,16 +75,20 @@ export const ChatBotWsp = () => {
       justifyContent: 'center',
     },
     // Options
-    optionStyle: {
+    botOptionStyle: {
       background: '#ffffff',
-      color: '#a07030',
-      border: '1.5px solid #a07030',
-      borderRadius: '20px',
+      color: '#000000',
+      borderRadius: '12px',
+      borderColor: '#aedb4c',      
+      padding: '4px 10px',       
+      fontSize: '13px',
+      fontWeight: '600'
     },
-    optionHoveredStyle: {
-      background: '#a07030',
+    botOptionHoveredStyle: {
+      background: '#aedb4c',
       color: '#ffffff',
-      borderRadius: '20px',
+      borderRadius: '12px',
+      padding: '5px 11px',
     },
     //  Botón flotante del chatbot (cuando está cerrado)
     chatButtonStyle: {
@@ -160,7 +170,7 @@ export const ChatBotWsp = () => {
     askTopic: {
       message: () =>
         `Perfecto, ${formRef.current.name}. ¿Sobre qué terreno te gustaría recibir información?`,
-      options: ['El Avellano - Los Muermos', 'El Avellano - Pasajes del Rio'],
+      options: proyectosActivos,
       chatDisabled: true,
       function: (params: { userInput: string }) => {
         formRef.current.message = params.userInput;

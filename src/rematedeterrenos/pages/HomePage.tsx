@@ -5,9 +5,16 @@ import { Proyectos } from "../components/home/Proyectos";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { GranRentabilidad } from "../components/home/GranRentabilidad";
 import { UbicacionContacto } from "../components/Ubicacioncontacto";
+import { useProyectos } from "../hooks/useProyectos";
 
 export const HomePage = () => {
   const isMobile = useIsMobile();
+  const { proyectos, loading } = useProyectos();
+
+  const proyectosActivos = proyectos
+    .filter((p) => p.isActive)
+    .map((p) => p.name);
+
   
   return (
     <div>
@@ -34,7 +41,7 @@ export const HomePage = () => {
       <TuParcela/>
       <GranRentabilidad/>
       <Proyectos/>
-      <ChatBotWsp/>
+      {!loading && <ChatBotWsp proyectosActivos={proyectosActivos} />}
       <Contactenos/>
       <UbicacionContacto/>
     </div>

@@ -46,14 +46,14 @@ export const Proyectos = () => {
               return (
                 <article
                   key={proyecto.idSlug}
-                  className="flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-stone-200 bg-white shadow-xl shadow-stone-900/5 transition hover:-translate-y-1 hover:shadow-2xl"
+                  className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-stone-200 bg-white shadow-xl shadow-stone-900/5 transition hover:-translate-y-1 hover:shadow-2xl"
                 >
                   {/* Imagen completa sin recorte */}
                   <div className="w-full overflow-hidden rounded-t-[1.5rem]">
                     <img
                       src={proyecto.imageCarrousel}
                       alt={proyecto.name}
-                      className={`w-full h-auto object-contain transition-all duration-300 ${
+                      className={`w-full h-auto object-contain transition-all duration-300 group-hover:scale-110 ${
                         inactive ? "grayscale" : ""
                       }`}
                     />
@@ -64,7 +64,9 @@ export const Proyectos = () => {
                       <p className="text-xs uppercase tracking-[0.2em] text-stone-400">
                         Region de los lagos
                       </p>
-                      <h3 className="mt-3 text-xl font-semibold font-courgette text-stone-900">
+                      <h3 className="mt-3 text-xl font-semibold text-stone-900"
+                        style={{ fontFamily: "'Playfair Display', serif" }}
+                      >
                         {proyecto.name}
                       </h3>
                     </div>
