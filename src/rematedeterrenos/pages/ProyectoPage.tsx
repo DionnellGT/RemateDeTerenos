@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { CardsCaracteristicas } from "../components/CardsCaracteristicas";
 import { ChatBotProjectWsp } from "../components/ChatBotProject";
 import { UbicacionContacto } from "../components/Ubicacioncontacto";
+import { LoadingSpinner } from "../components/LoadingSpinner";
 
 
 export const ProyectoPage = () => {
@@ -30,9 +31,7 @@ export const ProyectoPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-stone-100 px-6">
-        <p className="text-2xl font-semibold text-stone-700">Cargando proyecto...</p>
-      </div>
+      <LoadingSpinner/>
     );
   }
 
