@@ -17,13 +17,13 @@ export const Proyectos = () => {
     <section id="proyectos" className="bg-[#f5f0eb] py-15 overflow-hidden">
       <div className="max-w-8xl mx-auto px-6">
         <div className="text-center mb-5 md:mb-12">
-          <p className="text-[#a07030] text-[11px] font-semibold tracking-[0.2em] uppercase mb-2">
+          <p className="text-[#5cb85c] text-[11px] font-semibold tracking-[0.2em] uppercase mb-2">
             Encuentra tu parcela
           </p>
-          <h2 className="font-bold font-courgette text-stone-900 text-3xl max-sm:text-2xl md:text-5xl">
+          <h2 className="font-bold font-courgette text-stone-600 text-3xl max-sm:text-2xl md:text-5xl">
             Nuestros Proyectos
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-stone-600 md:text-base">
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-stone-500 md:text-base">
             Explora los proyectos disponibles elige la parcela que mejor se adapte a tu plan.
           </p>
         </div>
@@ -60,12 +60,11 @@ export const Proyectos = () => {
                   </div>
 
                   <div className="flex flex-1 flex-col gap-4 p-5">
-                    <div>
+                    <div className="text-center">
                       <p className="text-xs uppercase tracking-[0.2em] text-stone-400">
                         Region de los lagos
                       </p>
-                      <h3 className="mt-3 text-xl font-semibold text-stone-900"
-                        style={{ fontFamily: "'Playfair Display', serif" }}
+                      <h3 className="mt-3 text-xl font-semibold tracking-[0.1em] text-stone-700"
                       >
                         {proyecto.name}
                       </h3>
