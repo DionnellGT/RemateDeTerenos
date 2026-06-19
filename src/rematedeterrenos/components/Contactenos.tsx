@@ -34,7 +34,7 @@ export const Contactenos = () => {
           {/* Columna izquierda — texto */}
           <div>
             <h2 className="max-sm:text-2xl max-sm:px-3 max-sm:py-1 max-sm:text-center text-4xl md:text-5xl leading-tight mb-6">
-              <span className="block font-black text-[#1a3a3a]" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <span className="block font-black text-[#214b4be3]" style={{ fontFamily: "'Playfair Display', serif" }}>
                 ¿Quieres Saber más?
               </span>
               <span className="block text-[#aedb4c]" style={{ fontFamily: "'Great Vibes', cursive", fontSize: "3rem" }}>
@@ -52,7 +52,7 @@ export const Contactenos = () => {
 
           {/* Columna derecha — formulario */}
 <div className="bg-white/95 rounded-2xl p-5 md:p-8 shadow-[0_25px_75px_rgba(0,0,0,0.14)] border border-[#aedb4c]/40">
-              <h3 className="font-bold text-stone-900 text-xl mb-6">
+              <h3 className="font-bold text-stone-600 text-xl mb-6">
                 Escríbenos{" "}
                 <span className="text-[#aedb4c]">tu mensaje</span>
             </h3>

@@ -172,8 +172,8 @@ export const Conectividad = ({
             <Sparkles size={16} />
             Conectividad
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-stone-900 leading-tight mb-4 font-courgette">
-            Centros urbanos <span className="text-[#1fcd26] ">cercanos</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-stone-600 leading-tight mb-4 ">
+            Centros urbanos <span className="text-[#1fcd26] font-courgette">cercanos</span>
           </h2>
           <p className="text-stone-500 text-base leading-relaxed mb-8">
             Accede fácilmente a los principales servicios y ciudades desde el proyecto.
@@ -208,8 +208,8 @@ export const Conectividad = ({
             <MapPin size={16} />
             Turismo
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-stone-900 leading-tight mb-4 font-courgette">
-            Atracciones <span className="text-[#1fcd26]">turísticas</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-stone-600 leading-tight mb-4 ">
+            Atracciones <span className="text-[#1fcd26] font-courgette">turísticas</span>
           </h2>
           <p className="text-stone-500 text-base mb-8 leading-relaxed">
             Vive experiencias únicas a pocos minutos del proyecto, rodeado de naturaleza y cultura local.
