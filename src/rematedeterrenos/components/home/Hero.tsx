@@ -3,38 +3,6 @@ import { useEffect, useRef, useState } from "react";
 
 const AUTOPLAY_INTERVAL_MS = 4000;
 
-const ArrowIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="w-4 h-4"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-  </svg>
-);
-
-/* ── CTAs compartidos por ambas pantallas del carrousel ── */
-const HeroCtas = () => (
-  <div className="hero-entrance hero-delay-2 flex flex-wrap gap-4">
-    <a
-      href="#proyectos"
-      className="bg-[#A67C52] text-white px-8 py-4 rounded-lg font-manrope font-semibold text-[14px] tracking-[0.05em] uppercase hover:bg-[#79542e] transition-all duration-300 hover:shadow-xl flex items-center gap-2"
-    >
-      Ver Proyectos
-      <ArrowIcon />
-    </a>
-    <a
-      href="#somos"
-      className="border border-white text-white px-8 py-4 rounded-lg font-manrope font-semibold text-[14px] tracking-[0.05em] uppercase hover:bg-white/10 transition-all duration-300"
-    >
-      Conoce El Avellano
-    </a>
-  </div>
-);
-
 const TOTAL_SLIDES = 2;
 
 export const Hero = () => {
