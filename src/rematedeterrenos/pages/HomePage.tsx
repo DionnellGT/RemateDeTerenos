@@ -29,6 +29,7 @@ export const HomePage = () => {
             className="w-full h-11/12 md:h-full object-cover"
           />
         </div>
+        {/* 
         <div className="relative z-10 mx-auto text-white overflow-hidden max-w-full shadow-2xl">
           <img
             src={"/madera.webp"}
@@ -36,6 +37,7 @@ export const HomePage = () => {
             className="w-full h-11/12 md:h-full object-cover"
           />
         </div>
+        */}
       </section>
 
       <TuParcela/>
