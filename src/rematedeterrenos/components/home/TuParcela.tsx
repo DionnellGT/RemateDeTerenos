@@ -22,7 +22,7 @@ const features = [
 export const TuParcela = () => {
   return (
     <>
-      <div className="min-h-screen bg-[#f0ede6] flex flex-col items-center justify-center px-5 py-12"
+      <div className="min-h-screen bg-[#f0ede6] flex flex-col items-center justify-center px-5 py-15"
            style={{
              backgroundImage:
                "url('/fondotrama.jpg')",
