@@ -1,10 +1,12 @@
-import { createHashRouter, Navigate, RouterProvider } from "react-router";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router";
 import { HomePage } from "./rematedeterrenos/pages/HomePage";
 import { ProyectoPage } from "./rematedeterrenos/pages/ProyectoPage";
 import { RemateLayout } from "./rematedeterrenos/layout/RemateLayout";
+import { TerminosCondiciones } from "./rematedeterrenos/pages/TerminosCondiciones";
+import { PoliticaPrivacidad } from "./rematedeterrenos/pages/PoliticaPrivacidad";
 
 
-const appRouter = createHashRouter([
+const appRouter = createBrowserRouter([
     //Public routes
     { 
         path: '/',
@@ -17,6 +19,14 @@ const appRouter = createHashRouter([
             {
                 path: 'proyectos/:idSlug',
                 element: <ProyectoPage/>
+            },
+            {
+                path: "terminos-y-condiciones",
+                element: <TerminosCondiciones />
+            },
+            {
+                path: "politica-de-privacidad",
+                element: <PoliticaPrivacidad />
             }
         ]
     },

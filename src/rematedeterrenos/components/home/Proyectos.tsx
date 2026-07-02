@@ -15,7 +15,7 @@ export const Proyectos = () => {
 
   return (
     <section id="proyectos" className="bg-[#f5f0eb] py-15 overflow-hidden">
-      <div className="max-w-8xl mx-auto px-6">
+      <div className="max-w-8xl mx-auto px-6 max-sm:px-1">
         <div className="text-center mb-5 md:mb-12">
           <p className="text-[#5cb85c] text-[11px] font-semibold tracking-[0.2em] uppercase mb-2">
             Encuentra tu parcela
@@ -29,9 +29,9 @@ export const Proyectos = () => {
         </div>
 
         {loading ? (
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 animate-pulse">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4 animate-pulse">
             {Array.from({ length: 4 }).map((_, index) => (
-              <div key={index} className="h-72 rounded-4xl bg-stone-200" />
+              <div key={index} className="h-72 rounded-2xl sm:rounded-4xl bg-stone-200" />
             ))}
           </div>
         ) : proyectos.length === 0 ? (
@@ -39,17 +39,17 @@ export const Proyectos = () => {
             <p className="text-stone-700">No hay proyectos disponibles en este momento.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 px-5">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
             {proyectos.map((proyecto) => {
               const inactive = !proyecto.isActive;
 
               return (
                 <article
                   key={proyecto.idSlug}
-                  className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-stone-200 bg-white shadow-xl shadow-stone-900/5 transition hover:-translate-y-1 hover:shadow-2xl"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl sm:rounded-[1.5rem] border border-stone-200 bg-white shadow-md sm:shadow-xl shadow-stone-900/5 transition hover:-translate-y-1 hover:shadow-2xl"
                 >
-                  {/* Imagen completa sin recorte */}
-                  <div className="w-full overflow-hidden rounded-t-[1.5rem]">
+                  {/* Imagen con proporción fija para que todas las tarjetas midan igual, sin recortar la imagen */}
+                  <div className="w-full overflow-hidden rounded-2xl sm:rounded-[1.5rem]">
                     <img
                       src={proyecto.imageCarrousel}
                       alt={proyecto.name}
@@ -59,26 +59,26 @@ export const Proyectos = () => {
                     />
                   </div>
 
-                  <div className="flex flex-1 flex-col gap-4 p-5">
+                  <div className="flex flex-1 flex-col gap-2 p-3 sm:gap-4 sm:p-5">
                     <div className="text-center">
-                      <p className="text-xs uppercase tracking-[0.2em] text-stone-400">
-                        Region de los lagos
+                      <p className="text-[9px] uppercase tracking-tight text-stone-400 sm:text-xs sm:tracking-[0.2em]">
+                        Región de Los Lagos
                       </p>
-                      <h3 className="mt-3 text-xl font-semibold tracking-[0.1em] text-stone-700"
+                      <h3 className="mt-1.5 line-clamp-2 text-sm font-semibold leading-snug tracking-normal text-stone-700 sm:mt-3 sm:text-xl sm:tracking-[0.1em]"
                       >
                         {proyecto.name}
                       </h3>
                     </div>
                     <div className="mt-auto">
                       {inactive ? (
-                        <span className="inline-flex w-full items-center justify-center rounded-full bg-stone-300 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500 cursor-not-allowed select-none">
+                        <span className="inline-flex w-full items-center justify-center rounded-full bg-stone-300 px-2 py-2 text-[10px] font-semibold uppercase tracking-normal text-stone-500 cursor-not-allowed select-none sm:px-5 sm:py-3 sm:text-sm sm:tracking-[0.18em]">
                           Ver proyecto
                         </span>
                       ) : (
                         <Link 
                           to={`/proyectos/${proyecto.idSlug}`}
                           onClick={(e) => { handleLinkClick(e); window.scrollTo(0, 0); }}
-                          className="inline-flex w-full items-center justify-center rounded-full bg-[#9dc545] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#a9d34e]"
+                          className="inline-flex w-full items-center justify-center rounded-full bg-[#9dc545] px-2 py-2 text-[10px] font-semibold uppercase tracking-normal text-white transition hover:bg-[#a9d34e] sm:px-5 sm:py-3 sm:text-sm sm:tracking-[0.18em]"
                         >
                           Ver proyecto
                         </Link>

@@ -19,7 +19,7 @@ export const GranRentabilidad = () => {
   ];
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800 pb-12 pt-12 md:py-0 ">
+    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800 pb-12 max-sm:pb-1 pt-12 md:py-0 ">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <img
           src="/lana.jpg"
@@ -27,9 +27,9 @@ export const GranRentabilidad = () => {
           className="absolute inset-x-0 top-0 h-full w-full object-cover opacity-20"
         />
       </div>
-      <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 items-center">
+      <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 max-sm:px-0 items-center">
         {/* Left side - Content */}
-        <div className="text-white order-1">
+        <div className="text-white order-1 max-sm:px-4">
           <h2 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
             Gran<br />
             rentabilidad a<br />
@@ -55,7 +55,7 @@ export const GranRentabilidad = () => {
 
         {/* Right side - Image */}
         <div className="relative flex justify-center order-2">
-          <div className="relative w-full max-w-md">
+          <div className="relative w-full max-w-md max-sm:w-full">
             <img 
               src={isMobile ? "/fotogentemob.jpg" : "/fotogente.jpg"}
               alt="Pareja joven" 
