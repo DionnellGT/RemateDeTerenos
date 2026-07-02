@@ -1,19 +1,55 @@
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
+import { useProyectos } from "../hooks/useProyectos";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useState } from "react";
 
 interface ContactForm {
   nombre: string;
   apellido: string;
   email: string;
   telefono: string;
+  proyecto: string;
   mensaje: string;
 }
 
 export const Contactenos = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<ContactForm>();
+  const { register, 
+          handleSubmit, 
+          control,
+          reset, 
+          formState: { errors } 
+        } = useForm<ContactForm>();
+  const { proyectos, loading: loadingProyectos } = useProyectos();
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError]     = useState(false);
 
-  const onSubmit = (data: ContactForm) => {
-    console.log(data);
-    // aquí conectas tu lógica de envío
+  const proyectosActivos = proyectos.filter((proyecto) => proyecto.isActive);
+
+ const onSubmit = async (data: ContactForm) => {
+    setIsSuccess(false);
+    setIsError(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setIsSuccess(true);
+        reset();
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        setIsError(true);
+      }
+    } catch {
+      setIsError(true);
+    }
   };
 
   const inputClass = (hasError: boolean) =>
@@ -24,7 +60,7 @@ export const Contactenos = () => {
   return (
     <section
       id="contactanos"
-      className="relative py-15 px-6 "
+      className="relative py-15 px-6 max-sm:py-10 max-sm:px-1 bg-[#f5f5f5]"
     >
       <div className="max-w-6xl mx-auto bg-cover bg-center bg-no-repeat rounded-3xl p-10 max-sm:p-3 md:p-16"
         style={{ backgroundImage: "url('/fondoContactenos.webp')" }}
@@ -51,7 +87,7 @@ export const Contactenos = () => {
           </div>
 
           {/* Columna derecha — formulario */}
-<div className="bg-white/95 rounded-2xl p-5 md:p-8 shadow-[0_25px_75px_rgba(0,0,0,0.14)] border border-[#aedb4c]/40">
+          <div className="bg-white/95 rounded-2xl p-5 md:p-8 shadow-[0_25px_75px_rgba(0,0,0,0.14)] border border-[#aedb4c]/40">
               <h3 className="font-bold text-stone-600 text-xl mb-6">
                 Escríbenos{" "}
                 <span className="text-[#aedb4c]">tu mensaje</span>
@@ -80,7 +116,10 @@ export const Contactenos = () => {
                 <input
                   {...register("email", {
                     required: true,
-                    pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Email inválido" }
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: "Email inválido",
+                    },
                   })}
                   placeholder="Email"
                   type="email"
@@ -95,13 +134,56 @@ export const Contactenos = () => {
 
               <div className="flex flex-col gap-1">
                 <input
-                  {...register("telefono", { required: true })}
-                  placeholder="Teléfono"
-                  type="tel"
+                  {...register("telefono", {
+                    required: "Requerido",
+                    minLength: {
+                      value: 8,
+                      message: "Mínimo 8 caracteres",
+                    },
+                  })}
+                      type="tel"
+                      placeholder="+56 9 ..."
                   className={inputClass(!!errors.telefono)}
                 />
-                {errors.telefono && <span className="text-red-400 text-[11px]">Requerido</span>}
+                {errors.telefono && <span className="text-red-400 text-[11px]">{errors.telefono.message || "Requerido"}</span>}
               </div>
+            </div>
+
+            <div className="flex flex-col gap-1 mb-4">
+              <Controller
+                name="proyecto"
+                control={control}
+                rules={{ required: "Selecciona un proyecto" }}
+                render={({ field }) => (
+                  <Select
+                    value={field.value}
+                    onValueChange={field.onChange}
+                    disabled={loadingProyectos}
+                  >
+                    <SelectTrigger
+                      className={`w-full !h-auto ${inputClass(!!errors.proyecto)}`}
+                    >
+                      <SelectValue
+                        placeholder={
+                          loadingProyectos
+                            ? "Cargando proyectos..."
+                            : "Selecciona un proyecto"
+                        }
+                      />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {proyectosActivos.map((proyecto) => (
+                        <SelectItem key={proyecto.id} value={proyecto.id}>
+                          {proyecto.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                )}
+              />
+              {errors.proyecto && (
+                <span className="text-red-400 text-[11px]">{errors.proyecto.message}</span>
+              )}
             </div>
 
             <div className="flex flex-col gap-1 mb-4">
@@ -114,6 +196,17 @@ export const Contactenos = () => {
               {errors.mensaje && <span className="text-red-400 text-[11px]">Requerido</span>}
             </div>
 
+            {/* Feedback */}
+                {isSuccess && (
+                  <p className="text-green-600 font-manrope text-[13px] text-center">
+                    ✓ Mensaje enviado. ¡Pronto nos pondremos en contacto!
+                  </p>
+                )}
+                {isError && (
+                  <p className="text-red-400 font-manrope text-[13px] text-center">
+                    Ocurrió un error al enviar. Inténtalo de nuevo.
+                  </p>
+                )}
             <div className="flex justify-end">
               <button
                 onClick={handleSubmit(onSubmit)}

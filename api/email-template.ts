@@ -7,7 +7,7 @@ interface ContactEmailData {
   mensaje: string;
 }
 
-const LOGO_URL = "https://elavellano.cl/logo1.png";
+const LOGO_URL = "https://res.cloudinary.com/drhk7ng4v/image/upload/v1783026866/logoRT_wkoeze.png";
 
 export function buildContactEmailHtml(data: ContactEmailData): string {
   const { nombre, apellido, email, telefono, proyecto, mensaje } = data;
@@ -32,11 +32,11 @@ export function buildContactEmailHtml(data: ContactEmailData): string {
               <table role="presentation" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="vertical-align:middle;">
-                    <img src="${LOGO_URL}" alt="El Avellano" width="185" height="50" style="display:block; border-radius:8px; background-color:#ffffff; padding:4px;" />
+                    <img src="${LOGO_URL}" alt="Remate de Terrenos" width="185" height="50" style="display:block; border-radius:8px; background-color:#ffffff; padding:4px;" />
                   </td>
                   <td style="padding-left:14px; vertical-align:middle;">
                     <p style="margin:0; color:#ffffff; font-size:11px; letter-spacing:2px; text-transform:uppercase; opacity:0.85;">
-                      El Avellano
+                      Remate de Terrenos
                     </p>
                     <h1 style="margin:4px 0 0; color:#ffffff; font-size:20px; font-weight:700;">
                       Nuevo mensaje de contacto
@@ -118,7 +118,7 @@ export function buildContactEmailHtml(data: ContactEmailData): string {
             <td style="padding:20px 32px; background-color:#f5f0eb;">
               <p style="margin:0; color:#a8a29e; font-size:11px; text-align:center;">
                 Este mensaje fue enviado automáticamente desde el formulario de contacto de
-                <a href="https://elavellano.cl" style="color:#a07030; text-decoration:none;">elavellano.cl</a>
+                <a href="https://rematedeterrenos.cl" style="color:#a07030; text-decoration:none;">rematedeterrenos.cl</a>
               </p>
             </td>
           </tr>
