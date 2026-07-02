@@ -28,7 +28,7 @@ export function buildContactEmailHtml(data: ContactEmailData): string {
 
           <!-- Header con logo -->
           <tr>
-            <td style="background-color:#a07030; padding:28px 32px;">
+            <td style="background-color:#024323; padding:28px 32px;">
               <table role="presentation" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="vertical-align:middle;">
@@ -68,7 +68,7 @@ export function buildContactEmailHtml(data: ContactEmailData): string {
                     Email
                   </td>
                   <td style="padding:12px 0; border-bottom:1px solid #e7e5e4; color:#1c1917; font-size:15px;">
-                    <a href="mailto:${escapeHtml(email)}" style="color:#a07030; text-decoration:none;">${escapeHtml(email)}</a>
+                    <a href="mailto:${escapeHtml(email)}" style="color:#3B6D11; text-decoration:none;">${escapeHtml(email)}</a>
                   </td>
                 </tr>
                 <tr>
@@ -84,7 +84,7 @@ export function buildContactEmailHtml(data: ContactEmailData): string {
                     Proyecto
                   </td>
                   <td style="padding:12px 0; border-bottom:1px solid #e7e5e4;">
-                    <span style="display:inline-block; background-color:#f5f0eb; color:#a07030; font-size:13px; font-weight:700; padding:4px 12px; border-radius:999px; border:1px solid #e0d0bc;">
+                    <span style="display:inline-block; background-color:#EAF3DE; color:#3B6D11; font-size:13px; font-weight:700; padding:4px 12px; border-radius:999px; border:1px solid #aedb4c;">
                       ${escapeHtml(proyecto)}
                     </span>
                   </td>
@@ -102,7 +102,7 @@ export function buildContactEmailHtml(data: ContactEmailData): string {
               <!-- CTA -->
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:32px;">
                 <tr>
-                  <td style="border-radius:999px; background-color:#a07030;">
+                  <td style="border-radius:999px; background-color:#639922;">
                     <a href="mailto:${escapeHtml(email)}"
                        style="display:inline-block; padding:12px 28px; color:#ffffff; font-size:13px; font-weight:700; text-decoration:none; text-transform:uppercase; letter-spacing:1px; border-radius:999px;">
                       Responder a ${escapeHtml(nombre)}
@@ -118,7 +118,7 @@ export function buildContactEmailHtml(data: ContactEmailData): string {
             <td style="padding:20px 32px; background-color:#f5f0eb;">
               <p style="margin:0; color:#a8a29e; font-size:11px; text-align:center;">
                 Este mensaje fue enviado automáticamente desde el formulario de contacto de
-                <a href="https://rematedeterrenos.cl" style="color:#a07030; text-decoration:none;">rematedeterrenos.cl</a>
+                <a href="https://rematedeterrenos.cl" style="color:#3B6D11; text-decoration:none;">rematedeterrenos.cl</a>
               </p>
             </td>
           </tr>

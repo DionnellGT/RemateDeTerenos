@@ -25,7 +25,7 @@ export function buildAutoresponderHtml(data: AutoresponderData): string {
 
           <!-- Header con logo -->
           <tr>
-            <td style="background-color:#a07030; padding:28px 32px; text-align:center;">
+            <td style="background-color:#024323; padding:28px 32px; text-align:center;">
               <img src="${LOGO_URL}" alt="Remate de Terrenos" width="185" height="50" style="display:block; margin:0 auto 12px; border-radius:10px; background-color:#ffffff; padding:6px;" />
               <p style="margin:0; color:#ffffff; font-size:11px; letter-spacing:2px; text-transform:uppercase; opacity:0.85;">
                 Remate de Terrenos
@@ -65,7 +65,7 @@ export function buildAutoresponderHtml(data: AutoresponderData): string {
                   <td align="center" style="padding-top:8px;">
                     <table role="presentation" cellpadding="0" cellspacing="0">
                       <tr>
-                        <td style="border-radius:999px; background-color:#a07030;">
+                        <td style="border-radius:999px; background-color:#639922;">
                           <a href="https://rematedeterrenos.cl/#proyectos"
                              style="display:inline-block; padding:12px 28px; color:#ffffff; font-size:13px; font-weight:700; text-decoration:none; text-transform:uppercase; letter-spacing:1px; border-radius:999px;">
                             Ver nuestros proyectos
@@ -87,7 +87,7 @@ export function buildAutoresponderHtml(data: AutoresponderData): string {
                 Este es un mensaje automático, no es necesario que lo respondas.
               </p>
               <p style="margin:0; color:#a8a29e; font-size:11px; text-align:center;">
-                <a href="https://rematedeterrenos.cl" style="color:#a07030; text-decoration:none;">rematedeterrenos.cl</a>
+                <a href="https://rematedeterrenos.cl" style="color:#3B6D11; text-decoration:none;">rematedeterrenos.cl</a>
               </p>
             </td>
           </tr>
