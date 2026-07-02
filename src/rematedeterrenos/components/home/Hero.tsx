@@ -27,7 +27,7 @@ export const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative h-[1000px] md:h-[430px] mt-18 flex items-center overflow-hidden"
+      className="relative max-sm:h-[500px] h-[1000px] md:h-[450px] mt-18 flex items-center overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -42,7 +42,7 @@ export const Hero = () => {
           <img 
             src={isMobile ? "/banner web Global2_Mobile Remate 1.jpg" : "/banner web Global2_Banner Remate 1.jpg"}
             alt="banner 1"
-            className="absolute inset-0 z-0 w-full h-11/12 md:h-full object-cover"
+            className="absolute inset-0 z-0 w-full h-auto min-h-[450px] object-cover"
           />
 
         {/* Overlay gradiente: opaco a la izquierda, transparente a la derecha */}
@@ -60,7 +60,7 @@ export const Hero = () => {
         <img  
             src={isMobile ? "/banner web Global2_Mobile Remate 2.jpg" : "/banner web Global2_Banner Remate 2.jpg"}
             alt="banner 2"
-            className="absolute inset-0 z-0 w-full h-11/12 md:h-full object-cover"
+            className="absolute inset-0 z-0 w-full h-auto min-h-[450px] object-cover"
           />
         {/* Overlay gradiente: opaco a la izquierda, transparente a la derecha */}
         <div className="absolute inset-0 z-0 " />
