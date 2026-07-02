@@ -23,9 +23,9 @@ export const ChatBotProjectWsp = ({ nombre }: { nombre: string }) => {
     chatButton: {
       visible: true,
       position: 'bottom-right',
-      icon: '/favicon.ico',
+      icon: '/wsp-bot.png',
     },
-    tooltip: { mode: 'CLOSE', text: 'Click to me!' },
+    tooltip: { mode: 'START', text: 'Click to me!' },
     chatInput: { botDelay: 500 },
   };
 
@@ -82,8 +82,10 @@ export const ChatBotProjectWsp = ({ nombre }: { nombre: string }) => {
     },
     //  Botón flotante del chatbot (cuando está cerrado)
     chatButtonStyle: {
-      background: '#ede9e0', 
-      fill: '#ede9e0',
+      background: 'transparent',
+      fill: '#ffffff',
+      width: '70px',
+      height: '70px',
       borderRadius: '50%',
       boxShadow: '0 4px 12px rgba(160, 112, 48, 0.5)',
     },

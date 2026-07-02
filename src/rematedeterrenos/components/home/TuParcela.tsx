@@ -22,7 +22,7 @@ const features = [
 export const TuParcela = () => {
   return (
     <>
-      <div className="min-h-screen bg-[#f0ede6] flex flex-col items-center justify-center px-5 py-15"
+      <div className="min-h-screen bg-[#f0ede6] flex flex-col items-center justify-center px-5 max-sm:px-1 py-15"
            style={{
              backgroundImage:
                "url('/fondotrama.jpg')",
@@ -76,13 +76,13 @@ export const TuParcela = () => {
               {/* Título */}
               <h2
                 className="text-2xl font-extrabold text-[#1a1a1a] mb-3 leading-snug"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Arial', serif" }}
               >
                 {feature.title}
               </h2>
 
               {/* Descripción */}
-              <p className="text-lg text-[#555] leading-relaxed font-sans">
+              <p className="text-lg max-sm:text-[14px] text-[#555] leading-relaxed font-sans">
                 {feature.description}
               </p>
             </div>
