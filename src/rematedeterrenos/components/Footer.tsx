@@ -1,3 +1,4 @@
+import { metaEvents } from "@/lib/metaPixel";
 import { Link } from "react-router";
 
 export const Footer = () => {
@@ -23,14 +24,18 @@ export const Footer = () => {
           </h3>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
-              href="tel:+56949437974"
+              href="https://api.whatsapp.com/send/?phone=56949437974&text=Hola%2C+me+gustar%C3%ADa+recibir+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0"
+              onClick={() => metaEvents.contactWhatsapp()}
               className="rounded-2xl bg-white/10 px-4 py-3 transition hover:bg-white/20"
             >
               <span className="block text-xs max-sm:text-[12px] uppercase tracking-[0.18em] text-slate-400">Teléfono</span>
               <span className="max-sm:text-[14px] mt-1 block text-base font-semibold text-white">+56 9 4943 7974</span>
             </a>
             <a
-              href="mailto:contacto@rematedeterrenos.cl"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@rematedeterrenos.cl&su=Consulta&body=Hola,%20me%20interesa..."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => metaEvents.contactEmail()}
               className="rounded-2xl bg-white/10 px-4 py-3 transition hover:bg-white/20"
             >
               <span className="block text-xs max-sm:text-[12px] uppercase tracking-[0.18em] text-slate-400">Correo</span>

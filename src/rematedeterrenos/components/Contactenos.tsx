@@ -8,6 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useState } from "react";
+import { metaEvents } from "@/lib/metaPixel";
 
 interface ContactForm {
   nombre: string;
@@ -41,6 +42,8 @@ export const Contactenos = () => {
         body: JSON.stringify(data),
       });
       if (res.ok) {
+        metaEvents.lead()
+        
         setIsSuccess(true);
         reset();
         setTimeout(() => setIsSuccess(false), 5000);

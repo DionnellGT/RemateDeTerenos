@@ -1,3 +1,4 @@
+import { metaEvents } from "@/lib/metaPixel";
 import { MapPin, Clock, Phone, Map } from "lucide-react";
 
 const WSP_URL =
@@ -84,6 +85,7 @@ export const UbicacionContacto = () => {
               href={WSP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => metaEvents.contactWhatsapp()}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#639922] text-white text-sm font-semibold transition hover:bg-[#4f7a1a]"
             >
               {/* SVG inline de WhatsApp para no depender de lucide */}
