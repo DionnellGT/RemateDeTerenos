@@ -3,6 +3,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLocation, useNavigate } from "react-router";
+import { metaEvents } from "@/lib/metaPixel";
 
 const LOGO_STICKY = "/logo.svg";
 
@@ -97,7 +98,8 @@ export const NavbarRemate = () => {
           <a
             href="https://api.whatsapp.com/send/?phone=56949437974&text=Para+saber+sobre+tu+parcela+ind%C3%ADcanos%3A++Nombre+y+Apellido%2C+Nombre+del+Proyecto%2C+Lote+y+Caso&type=phone_number&app_absent=0"
             target="_blank"
-            rel="noopener noreferrer"      
+            rel="noopener noreferrer"
+            onClick={() => metaEvents.contactWhatsapp()}      
             className={cn(
               "px-5 py-2 rounded-full text-[13px] font-semibold tracking-[0.06em] uppercase transition-all duration-300",
               "bg-[#aedb4c] text-white hover:bg-[#C0F059] hover:text-white/90"
@@ -143,6 +145,7 @@ export const NavbarRemate = () => {
                   href="https://api.whatsapp.com/send/?phone=56949437974&text=Para+saber+sobre+tu+parcela+ind%C3%ADcanos%3A++Nombre+y+Apellido%2C+Nombre+del+Proyecto%2C+Lote+y+Caso&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => metaEvents.contactWhatsapp()}
                   className="mt-2 inline-block px-5 py-2 rounded-full bg-[#aedb4c] text-white text-[13px] font-semibold tracking-[0.06em] uppercase text-center"
                 >
                   Servicio al Cliente

@@ -10,6 +10,7 @@ import { CardsCaracteristicas } from "../components/CardsCaracteristicas";
 import { ChatBotProjectWsp } from "../components/ChatBotProject";
 import { UbicacionContacto } from "../components/Ubicacioncontacto";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { metaEvents } from "@/lib/metaPixel";
 
 
 export const ProyectoPage = () => {
@@ -20,6 +21,11 @@ export const ProyectoPage = () => {
   useEffect(() => {
     if (proyecto) {
       document.title = `${proyecto.name} | Remate de Terrenos`;
+
+      metaEvents.viewProject({
+        id: proyecto.id,
+        nombre: proyecto.name,
+      });
     } else {
       document.title = "Proyecto no encontrado | Remate de Terrenos";
     }
