@@ -1,5 +1,11 @@
+import { useEffect } from "react";
 
 export const TerminosCondiciones = () => {
+
+  useEffect(() => {
+    document.title = "Términos y Condiciones | Remate De Terrenos";
+  }, []);
+  
   return (
     <main className="min-h-screen bg-white px-10 py-16 my-10 text-gray-600">
       <div className="mx-auto max-w-4xl">

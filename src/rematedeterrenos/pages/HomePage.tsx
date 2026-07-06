@@ -6,10 +6,16 @@ import { GranRentabilidad } from "../components/home/GranRentabilidad";
 import { UbicacionContacto } from "../components/Ubicacioncontacto";
 import { useProyectos } from "../hooks/useProyectos";
 import { Hero } from "../components/home/Hero";
+import { useEffect } from "react";
 
 export const HomePage = () => {
   const { proyectos, loading } = useProyectos();
 
+    
+  useEffect(() => {
+    document.title = "Remate De Terrenos";
+  }, []);
+  
   const proyectosActivos = proyectos
     .filter((p) => p.isActive)
     .map((p) => p.name);
