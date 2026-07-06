@@ -1,4 +1,4 @@
-import { escapeHtml } from "./email-template.js";
+import { escapeHtml } from "./email-template";
 
 interface AutoresponderData {
   nombre: string;

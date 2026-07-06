@@ -1,7 +1,7 @@
 // api/contact.ts
 import { Resend } from "resend";
-import { buildContactEmailHtml } from "./email-template.js";
-import { buildAutoresponderHtml } from "./autoresponder-template.js";
+import { buildContactEmailHtml } from "./email-template";
+import { buildAutoresponderHtml } from "./autoresponder-template";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
