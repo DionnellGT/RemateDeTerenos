@@ -176,7 +176,7 @@ export const Contactenos = () => {
                     </SelectTrigger>
                     <SelectContent>
                       {proyectosActivos.map((proyecto) => (
-                        <SelectItem key={proyecto.id} value={proyecto.id}>
+                        <SelectItem key={proyecto.id} value={proyecto.name}>
                           {proyecto.name}
                         </SelectItem>
                       ))}
