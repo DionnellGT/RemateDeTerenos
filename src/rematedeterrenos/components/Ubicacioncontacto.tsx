@@ -8,7 +8,7 @@ const MAPS_URL =
   "https://www.google.com/maps/place/Global+Terrenos/@-33.4410908,-70.6540247,16z/data=!4m6!3m5!1s0x9662c560eb64a3ab:0x2c2ef04fdc7e437f!8m2!3d-33.4405893!4d-70.6523079!16s%2Fg%2F11kt5kq5cl?hl=es&entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D";
 
 const MAPS_EMBED_URL =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.1!2d-70.6540247!3d-33.4410908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c560eb64a3ab%3A0x2c2ef04fdc7e437f!2sGlobal+Terrenos!5e0!3m2!1ses!2scl!4v1";
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1664.6663105580592!2d-70.65358356154863!3d-33.440639693348366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a41d104e51%3A0x2fce7295abfcfe92!2sBandera%20206%2C%208320000%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1783444758361!5m2!1ses!2scl";
 
 interface InfoRowProps {
   icon: React.ReactNode;
@@ -124,12 +124,12 @@ export const UbicacionContacto = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Ubicación Global Terrenos"
+            title="Ubicación Remate de Terrenos"
           />
           {/* Badge flotante */}
           <div className="absolute bottom-4 left-4 bg-[#639922] text-white text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-1.5 pointer-events-none shadow-md">
             <MapPin size={13} aria-hidden="true" />
-            Global Terrenos
+            Remate de Terrenos
           </div>
         </div>
 
