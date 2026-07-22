@@ -7,14 +7,19 @@ import { UbicacionContacto } from "../components/Ubicacioncontacto";
 import { useProyectos } from "../hooks/useProyectos";
 import { Hero } from "../components/home/Hero";
 import { useEffect } from "react";
+import { trackSocialVisit } from "@/lib/socialEvents";
 
 export const HomePage = () => {
   const { proyectos, loading } = useProyectos();
-
-    
+  
   useEffect(() => {
     document.title = "Remate De Terrenos";
   }, []);
+
+  useEffect(() => {
+    trackSocialVisit();
+  }, []);
+  
   
   const proyectosActivos = proyectos
     .filter((p) => p.isActive)
