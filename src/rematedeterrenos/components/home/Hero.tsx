@@ -1,60 +1,60 @@
 import { useIsMobile } from "@/rematedeterrenos/hooks/useIsMobile";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
-const AUTOPLAY_INTERVAL_MS = 4000;
+//const AUTOPLAY_INTERVAL_MS = 4000;
 
-const TOTAL_SLIDES = 2;
+const TOTAL_SLIDES = 1;
 
 export const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  //const [isPaused, setIsPaused] = useState(false);
+  //const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const isMobile = useIsMobile();
   
 
-  useEffect(() => {
-    if (isPaused) return;
-
-    intervalRef.current = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % TOTAL_SLIDES);
-    }, AUTOPLAY_INTERVAL_MS);
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [isPaused]);
+  //useEffect(() => {
+  //  if (isPaused) return;
+//
+  //  intervalRef.current = setInterval(() => {
+  //    setActiveSlide((prev) => (prev + 1) % TOTAL_SLIDES);
+  //  }, AUTOPLAY_INTERVAL_MS);
+//
+  //  return () => {
+  //    if (intervalRef.current) clearInterval(intervalRef.current);
+  //  };
+  //}, [isPaused]);
 
   return (
     <section
       id="inicio"
       className="relative max-sm:h-[540px] h-[1000px] md:h-[450px] mt-18 flex items-center overflow-hidden"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      //onMouseEnter={() => setIsPaused(true)}
+      //onMouseLeave={() => setIsPaused(false)}
     >
       {/* ── Pantalla 1: contenido original del hero ── */}
+      {/* <div
+        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+          activeSlide === 0 ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+        }`}
+        aria-hidden={activeSlide !== 0}
+      > */}
+        {/* Imagen de fondo: una versión para desktop y otra para mobile */}
+          {/* <img 
+            src={isMobile ? "/banner web Global2_Mobile Remate 1.jpg" : "/banner web Global2_Banner Remate 1.jpg"}
+            alt="banner 1"
+            className="absolute inset-0 z-0 w-full h-auto min-h-[450px] object-cover"
+          />*/}
+
+        {/* Overlay gradiente: opaco a la izquierda, transparente a la derecha */}
+        {/*<div className="absolute inset-0 z-0 " />
+      </div> */}
+
+      {/* ── Pantalla 2: imágenes desktop/mobile de paisajes ── */}
       <div
         className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
           activeSlide === 0 ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
         }`}
         aria-hidden={activeSlide !== 0}
-      >
-        {/* Imagen de fondo: una versión para desktop y otra para mobile */}
-          <img 
-            src={isMobile ? "/banner web Global2_Mobile Remate 1.jpg" : "/banner web Global2_Banner Remate 1.jpg"}
-            alt="banner 1"
-            className="absolute inset-0 z-0 w-full h-auto min-h-[450px] object-cover"
-          />
-
-        {/* Overlay gradiente: opaco a la izquierda, transparente a la derecha */}
-        <div className="absolute inset-0 z-0 " />
-      </div>
-
-      {/* ── Pantalla 2: imágenes desktop/mobile de paisajes ── */}
-      <div
-        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-          activeSlide === 1 ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-        }`}
-        aria-hidden={activeSlide !== 1}
       >
         {/* Imagen de fondo: una versión para desktop y otra para mobile */}
         <img  
