@@ -3,7 +3,7 @@ import { useState } from "react";
 
 //const AUTOPLAY_INTERVAL_MS = 4000;
 
-const TOTAL_SLIDES = 1;
+const TOTAL_SLIDES = 2;
 
 export const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -32,29 +32,29 @@ export const Hero = () => {
       //onMouseLeave={() => setIsPaused(false)}
     >
       {/* ── Pantalla 1: contenido original del hero ── */}
-      {/* <div
-        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-          activeSlide === 0 ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-        }`}
-        aria-hidden={activeSlide !== 0}
-      > */}
-        {/* Imagen de fondo: una versión para desktop y otra para mobile */}
-          {/* <img 
-            src={isMobile ? "/banner web Global2_Mobile Remate 1.jpg" : "/banner web Global2_Banner Remate 1.jpg"}
-            alt="banner 1"
-            className="absolute inset-0 z-0 w-full h-auto min-h-[450px] object-cover"
-          />*/}
-
-        {/* Overlay gradiente: opaco a la izquierda, transparente a la derecha */}
-        {/*<div className="absolute inset-0 z-0 " />
-      </div> */}
-
-      {/* ── Pantalla 2: imágenes desktop/mobile de paisajes ── */}
       <div
         className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
           activeSlide === 0 ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
         }`}
         aria-hidden={activeSlide !== 0}
+      >
+        {/* Imagen de fondo: una versión para desktop y otra para mobile */}
+          <img 
+            src={isMobile ? "/banner web Global2_Mobile Remate 3.png" : "/banner web Global2_Banner Remate 3.png"}
+            alt="banner 1"
+            className="absolute inset-0 z-0 w-full h-full object-cover"
+          />
+
+        {/* Overlay gradiente: opaco a la izquierda, transparente a la derecha */}
+        <div className="absolute inset-0 z-0 " />
+      </div>
+
+      {/* ── Pantalla 2: imágenes desktop/mobile de paisajes ── */}
+      <div
+        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+          activeSlide === 1 ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+        }`}
+        aria-hidden={activeSlide !== 1}
       >
         {/* Imagen de fondo: una versión para desktop y otra para mobile */}
         <img  
