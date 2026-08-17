@@ -1,7 +1,7 @@
 import { useIsMobile } from "@/rematedeterrenos/hooks/useIsMobile";
 import { useEffect, useRef, useState } from "react";
 
-const AUTOPLAY_INTERVAL_MS = 4000;
+const AUTOPLAY_INTERVAL_MS = 4001;
 
 const TOTAL_SLIDES = 2;
 
