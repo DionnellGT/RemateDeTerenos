@@ -1,4 +1,5 @@
 import { useIsMobile } from "@/rematedeterrenos/hooks/useIsMobile";
+import { Link } from "react-router";
 import { useEffect, useRef, useState } from "react";
 
 const AUTOPLAY_INTERVAL_MS = 4001;
@@ -10,7 +11,7 @@ export const Hero = () => {
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const isMobile = useIsMobile();
-  
+  const isDragging = useRef(false);
 
   useEffect(() => {
     if (isPaused) return;
@@ -23,6 +24,12 @@ export const Hero = () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
   }, [isPaused]);
+
+  // Evita que el click del Link se dispare si el usuario estaba arrastrando
+  const handleLinkClick = (e: React.MouseEvent) => {
+    if (isDragging.current) e.preventDefault();
+  };
+
 
   return (
     <section
@@ -50,7 +57,9 @@ export const Hero = () => {
       </div>
 
       {/* ── Pantalla 2: imágenes desktop/mobile de paisajes ── */}
-      <div
+      <Link
+        to={`/proyectos/molulco_natri`}
+        onClick={(e) => { handleLinkClick(e); window.scrollTo(0, 0); }}
         className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
           activeSlide === 1 ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
         }`}
@@ -64,7 +73,7 @@ export const Hero = () => {
           />
         {/* Overlay gradiente: opaco a la izquierda, transparente a la derecha */}
         <div className="absolute inset-0 z-0 " />
-      </div>
+      </Link>
 
       {/* ── Indicadores del carrousel ── */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
