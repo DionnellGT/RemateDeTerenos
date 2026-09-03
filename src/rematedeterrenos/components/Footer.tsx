@@ -29,7 +29,7 @@ export const Footer = () => {
               className="rounded-2xl bg-white/10 px-4 py-3 transition hover:bg-white/20"
             >
               <span className="block text-xs max-sm:text-[12px] uppercase tracking-[0.18em] text-slate-400">Teléfono</span>
-              <span className="max-[1170px]:text-xs mt-1 block text-base font-semibold text-white">+56 9 4943 7974</span>
+              <span className="max-[1190px]:text-xs mt-1 block text-base font-semibold text-white">+56 9 4943 7974</span>
             </a>
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@rematedeterrenos.cl&su=Consulta&body=Hola,%20me%20interesa..."
@@ -39,7 +39,7 @@ export const Footer = () => {
               className="rounded-2xl bg-white/10 px-4 py-3 transition hover:bg-white/20"
             >
               <span className="block text-xs max-sm:text-[12px] uppercase tracking-[0.18em] text-slate-400">Correo</span>
-              <span className="max-[1170px]:text-xs mt-1 block text-base font-semibold text-white break-all">contacto@rematedeterrenos.cl</span>
+              <span className="max-[1190px]:text-xs mt-1 block text-base font-semibold text-white break-all">contacto@rematedeterrenos.cl</span>
             </a>
           </div>
         </div>
