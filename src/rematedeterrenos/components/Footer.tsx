@@ -12,7 +12,7 @@ export const Footer = () => {
           <a href="/" className="flex items-center">
             <img
               src="/logo-footer-white.png"
-              alt="El Avellano"
+              alt="Remate de Terrenos"
               className="h-15 w-auto brightness-0 invert"
             />
           </a>
