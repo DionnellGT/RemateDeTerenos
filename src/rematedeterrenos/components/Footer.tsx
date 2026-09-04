@@ -2,6 +2,7 @@ import { metaEvents } from "@/lib/metaPixel";
 import { Link } from "react-router";
 
 export const Footer = () => {
+  
   return (
     <footer className="bg-[#024323] py-10 px-6 text-white">
       <div className="max-w-6xl mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
