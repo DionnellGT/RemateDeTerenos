@@ -8,11 +8,11 @@ export const reservas: TermsSection = {
 
   blocks: [
     p(
-      "Cuando Global Terrenos habilite mecanismos de reserva de parcelas o unidades, estos tendrán por única finalidad otorgar al interesado una preferencia temporal para continuar el proceso de evaluación y contratación, impidiendo provisionalmente que la unidad reservada sea ofrecida o comercializada a terceros durante el período de vigencia de la reserva."
+      "Cuando Remate de Terrenos habilite mecanismos de reserva de parcelas o unidades, estos tendrán por única finalidad otorgar al interesado una preferencia temporal para continuar el proceso de evaluación y contratación, impidiendo provisionalmente que la unidad reservada sea ofrecida o comercializada a terceros durante el período de vigencia de la reserva."
     ),
 
     p(
-      "La reserva no constituye una compraventa, una promesa de compraventa ni un contrato definitivo, ni confiere al interesado derecho real alguno sobre la parcela o unidad reservada. Su único efecto es otorgar una preferencia temporal para la celebración de los instrumentos contractuales correspondientes, siempre que se cumplan las condiciones comerciales, legales y administrativas exigidas por Global Terrenos."
+      "La reserva no constituye una compraventa, una promesa de compraventa ni un contrato definitivo, ni confiere al interesado derecho real alguno sobre la parcela o unidad reservada. Su único efecto es otorgar una preferencia temporal para la celebración de los instrumentos contractuales correspondientes, siempre que se cumplan las condiciones comerciales, legales y administrativas exigidas por Remate de Terrenos."
     ),
 
     p(
@@ -24,7 +24,7 @@ export const reservas: TermsSection = {
     ),
 
     p(
-      "Global Terrenos podrá dejar sin efecto la reserva, sin responsabilidad alguna, cuando concurra cualquiera de las siguientes circunstancias:"
+      "Remate de Terrenos podrá dejar sin efecto la reserva, sin responsabilidad alguna, cuando concurra cualquiera de las siguientes circunstancias:"
     ),
 
     list([
@@ -32,7 +32,7 @@ export const reservas: TermsSection = {
       "El interesado no cumpla las condiciones comerciales, financieras o documentales exigidas para la compra.",
       "Exista imposibilidad legal, administrativa o técnica para celebrar la operación o transferir la unidad reservada.",
       "Se detecten errores materiales, tipográficos, informáticos o manifiestos en la publicación, cotización, precio o características de la unidad.",
-      "La unidad deje de encontrarse disponible por causas no imputables a Global Terrenos, incluyendo resoluciones administrativas, judiciales o de autoridad competente.",
+      "La unidad deje de encontrarse disponible por causas no imputables a Remate de Terrenos, incluyendo resoluciones administrativas, judiciales o de autoridad competente.",
       "El interesado incumpla cualquiera de las condiciones establecidas para la reserva.",
     ]),
 

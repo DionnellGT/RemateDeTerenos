@@ -8,7 +8,7 @@ export const promocionesDescuentosYBeneficiosComerciales: TermsSection = {
 
   blocks: [
     p(
-      "Las promociones, descuentos, campañas comerciales, bonos y demás beneficios ofrecidos por Global Terrenos tendrán exclusivamente la vigencia, condiciones y alcance expresamente indicados en la respectiva publicación, cotización, campaña publicitaria o comunicación oficial."
+      "Las promociones, descuentos, campañas comerciales, bonos y demás beneficios ofrecidos por Remate de Terrenos tendrán exclusivamente la vigencia, condiciones y alcance expresamente indicados en la respectiva publicación, cotización, campaña publicitaria o comunicación oficial."
     ),
 
     p(
@@ -19,7 +19,7 @@ export const promocionesDescuentosYBeneficiosComerciales: TermsSection = {
       "No serán acumulables entre sí ni con otras promociones, descuentos o beneficios vigentes.",
       "Estarán sujetos a la disponibilidad de las unidades ofrecidas y al stock disponible, cuando corresponda.",
       "Podrán exigir el cumplimiento de requisitos específicos, tales como plazos de reserva, forma de pago, modalidad de financiamiento u otras condiciones particulares establecidas para cada campaña.",
-      "Serán personales e intransferibles, no pudiendo ser cedidos, canjeados por dinero ni sustituidos por otros beneficios, salvo autorización expresa de Global Terrenos.",
+      "Serán personales e intransferibles, no pudiendo ser cedidos, canjeados por dinero ni sustituidos por otros beneficios, salvo autorización expresa de Remate de Terrenos.",
     ]),
 
     p(
@@ -27,7 +27,7 @@ export const promocionesDescuentosYBeneficiosComerciales: TermsSection = {
     ),
 
     p(
-      "Una vez expirado el plazo de vigencia de una promoción, descuento o beneficio comercial, Global Terrenos podrá modificarlo, reemplazarlo o ponerle término, sin que ello genere derecho a indemnización o compensación alguna para los interesados. Del mismo modo, la empresa podrá corregir errores materiales o de publicación que afecten las condiciones de una campaña, informando oportunamente las condiciones aplicables."
+      "Una vez expirado el plazo de vigencia de una promoción, descuento o beneficio comercial, Remate de Terrenos podrá modificarlo, reemplazarlo o ponerle término, sin que ello genere derecho a indemnización o compensación alguna para los interesados. Del mismo modo, la empresa podrá corregir errores materiales o de publicación que afecten las condiciones de una campaña, informando oportunamente las condiciones aplicables."
     ),
 
     p(
