@@ -39,7 +39,7 @@ export const Hero = () => {
       onMouseLeave={() => setIsPaused(false)}
     >
       
-      {/* ── Pantalla 2: imágenes desktop/mobile de paisajes ── */}
+      {/* ── Pantalla 1: imágenes desktop/mobile de paisajes ── */}
       <Link
         to={`/proyectos/molulco_natri`}
         onClick={(e) => { handleLinkClick(e); window.scrollTo(0, 0); }}
@@ -50,8 +50,8 @@ export const Hero = () => {
       >
         {/* Imagen de fondo: una versión para desktop y otra para mobile */}
         <img  
-            src={isMobile ? "/banner web Global2_Mobile Remate 2.jpg" : "/banner web Global2_Banner Remate 2.jpg"}
-            alt="banner 2"
+            src={isMobile ? "/BannerMobile_Molulco_FiestasPatrias.jpeg" : "/Banner_Molulco_FiestasPatrias.png"}
+            alt="banner 1"
             className="absolute inset-0 z-0 w-full h-full object-cover"
           />
         {/* Overlay gradiente: opaco a la izquierda, transparente a la derecha */}
