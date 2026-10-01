@@ -39,9 +39,9 @@ export const Hero = () => {
         }`}
         aria-hidden={activeSlide !== 0}
       >
-        {/* Cambia automáticamente entre la versión de celular y la de escritorio */}
+        {/* Cambia automáticamente entre la versión de celular (.jpg) y la de escritorio (.jpeg) */}
         <img  
-            src={isMobile ? "/cyber_mobile" : "/cyber.jpeg"}
+            src={isMobile ? "/cyber_mobile.jpg" : "/cyber.jpeg"}
             alt="banner cyber"
             className="absolute inset-0 z-0 w-full h-full object-cover"
           />
