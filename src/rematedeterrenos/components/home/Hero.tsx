@@ -1,3 +1,4 @@
+import { useIsMobile } from "@/rematedeterrenos/hooks/useIsMobile";
 import { useEffect, useRef, useState } from "react";
 
 const AUTOPLAY_INTERVAL_MS = 4001;
@@ -8,6 +9,7 @@ export const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (isPaused) return;
@@ -30,16 +32,16 @@ export const Hero = () => {
       onMouseLeave={() => setIsPaused(false)}
     >
       
-      {/* ── Pantalla 1: Imagen estática sin enlaces ── */}
+      {/* ── Pantalla 1: Imagen estática adaptada a dispositivo ── */}
       <div
         className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
           activeSlide === 0 ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
         }`}
         aria-hidden={activeSlide !== 0}
       >
-        {/* Imagen de fondo: cyber.jpeg */}
+        {/* Cambia automáticamente entre la versión de celular y la de escritorio */}
         <img  
-            src="/cyber.jpeg"
+            src={isMobile ? "/cyber_mobile" : "/cyber.jpeg"}
             alt="banner cyber"
             className="absolute inset-0 z-0 w-full h-full object-cover"
           />
