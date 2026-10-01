@@ -27,26 +27,26 @@ export const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative aspect-[1328/1949] md:aspect-[384/125] mt-18 flex items-center overflow-hidden"
+      className="relative w-full mt-18 flex items-center overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       
-      {/* ── Pantalla 1: Imagen estática adaptada a dispositivo ── */}
+      {/* ── Pantalla 1: Contenedor responsivo adaptado al tamaño de la imagen ── */}
       <div
-        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+        className={`relative w-full transition-opacity duration-1000 ease-in-out ${
           activeSlide === 0 ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
         }`}
         aria-hidden={activeSlide !== 0}
       >
-        {/* Cambia automáticamente entre la versión de celular (.jpg) y la de escritorio (.jpeg) */}
+        {/* Usamos h-auto y w-full para que la imagen mande sobre la altura total del banner */}
         <img  
             src={isMobile ? "/cyber_mobile.jpg" : "/cyber.jpeg"}
             alt="banner cyber"
-            className="absolute inset-0 z-0 w-full h-full object-cover"
+            className="w-full h-auto object-contain block"
           />
         {/* Overlay gradiente */}
-        <div className="absolute inset-0 z-0 " />
+        <div className="absolute inset-0 z-0 pointer-events-none" />
       </div>
 
       {/* ── Indicadores del carrousel ── */}
