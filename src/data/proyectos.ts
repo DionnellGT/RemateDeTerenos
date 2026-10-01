@@ -216,14 +216,13 @@ export const proyectos: Proyecto[] = [
     imagenBannerPrincipal: "/card_sendero.jpg",
     imagenBannerPrincipalMobile: "/card_sendero.jpg",
     imagenesDeCaracteristicas: [],
-    vistaProyecto360: "",
+    vistaProyecto360: "https://lanube360.com",
     imagenesVistasProyecto: [],
     imagenMapaFondo: "/mapa.webp",
-    linkMapa: "https://google.com",
+    linkMapa: "https://goo.gl",
     imagenBaner2: "/card_sendero.jpg",
-    centrosUrbanosCercanos: [],
-    imagenCentrosUrbanos: "/PaisajesDelRio/f1.webp",
-    atraccionesTuristicas: [],
-    imagenAtraccionesTuristicas: "/PaisajesDelRio/f2.webp"
-  }
-];
+    centrosUrbanosCercanos: [
+      { nombre: "Escuela de Puntra", distancia: "8.2 km", tiempo: "14 min" },
+      { nombre: "Ruta 5 sur (Cruce Puntra)", distancia: "13.9 km", tiempo: "24 min" },
+      { nombre: "Aeropuerto Mocopulli", distancia: "43 km", tiempo: "45 min" },
+      { nombre: "Quemchi", distancia: "40 km", tiempo: "46 min" },
